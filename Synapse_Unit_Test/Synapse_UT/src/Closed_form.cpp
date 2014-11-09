@@ -14,6 +14,11 @@ void Closed_form::Closed_form_solution(int n, int m, double t, double dx)
     vec U(m);
     int k;
 
+    //we choose k to be like this in order to avoid the case when
+    //when the exponent in the closed-form solution is not decreasing
+    //when t<<1,
+    //viz. to kill the exponent in order to get steady-state
+    //
     if (t<1) k=1/t;
     else k=n;
 
